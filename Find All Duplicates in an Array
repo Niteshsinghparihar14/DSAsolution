@@ -1,0 +1,22 @@
+#LEETCODE PROBLEM 442
+#find duplicates in array
+
+
+class Solution {
+public:
+    vector<int> findDuplicates(vector<int>& nums) {
+    int i;
+    vector<int>ans;
+    map<int,int>m;
+    for(i=0;i<nums.size();i++){
+        int x=nums[i];
+        m[x]++;
+    }
+    for(auto x:m){
+        if(x.second==2)
+        ans.push_back(x.first);
+        
+    }
+    return ans;
+    }
+};
